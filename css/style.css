@@ -381,10 +381,22 @@ section.header h1{
 }
 .photo{
     width: 30%;
-    height: 100% !important;
+    height: 90% !important;
     background: url('../images/me.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
+    transition: all .4s ease-in-out;
+}
+.photo:hover .dark-filter{
+    display: block;
+}
+.dark-filter{
+    height: 100%;
+    width:100%;
+    color: #fff;
+    cursor:pointer;
+    display: none;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, .2)40%,rgba(0, 0, 0, .9));
 }
 .desc{
     width: 50%;
