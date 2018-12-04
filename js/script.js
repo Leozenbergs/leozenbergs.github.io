@@ -17,15 +17,17 @@ function headerAnimation(x) {
     }
 }
 var btn = document.getElementById('form-btn');
-var mailer = document.addEventListener('click', function(){
+var mailer = btn.addEventListener('click', function(e){
     var r = new XMLHttpRequest();
     r.open("POST", "https://formspree.io/leoabreu14@gmail.com", true);
     r.onreadystatechange = function () {
         if (r.readyState != 4 || r.status != 200){
-            console.log('Deu ruim');
+            console.log('error');
         }else{
             console.log("Success: " + r.responseText);
         }
     };
     r.send();
+    e.preventDefault();
+    btn.setAttribute('disabled','disabled');
 });
