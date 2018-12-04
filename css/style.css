@@ -385,10 +385,11 @@ section.header h1{
     background: url('../images/me.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
-    transition: all .4s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 .photo:hover .dark-filter{
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 .dark-filter{
     height: 100%;
@@ -396,7 +397,13 @@ section.header h1{
     color: #fff;
     cursor:pointer;
     display: none;
+    text-align: center;
     background: linear-gradient(to bottom,rgba(0, 0, 0, .2)40%,rgba(0, 0, 0, .9));
+}
+.dark-filter p{
+    position: absolute;
+    text-transform: uppercase;
+    bottom:0px;
 }
 .desc{
     width: 50%;
