@@ -275,7 +275,7 @@ ul.nav.navbar-nav li a{
     display: block;
     text-align: center;
     font-family: Arial;    
-    height: 80vh;
+    height: 35rem;
     background-color: rgba(0, 0, 0, .8);
     color: #fff;
     z-index: 5;
