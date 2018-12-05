@@ -277,7 +277,8 @@ ul.nav.navbar-nav li a{
     font-family: Arial;    
     height: 80vh;
     background-color: rgba(0, 0, 0, .8);
-    color: #fff
+    color: #fff;
+    z-index: 5;
 }
 .contact h2{
     display: inline-block;
@@ -442,16 +443,19 @@ section.header h1{
     font-family: Verdana;
     background: rgba(255, 127, 80, .9);
     width:100%;    
+    height: 100%;
     display: inline-block;
     text-align: center;
     color: #fff;
+    z-index:0;
+    position: static;
 }
 .rodape-up .rodape-down{
     width: 70%;
     text-align: center;
 }
 .rodape-up{
-    height: 10vh;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
