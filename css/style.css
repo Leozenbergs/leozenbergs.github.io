@@ -23,8 +23,8 @@
     height: 40px;
     background-color: rgba(255, 127, 80, .7);
     bottom: -160px;
-    -webkit-animation: square 25s infinite;
-    animation: square 25s infinite;
+    -webkit-animation: square 12s infinite;
+    animation: square 12s infinite;
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
 }
