@@ -6,16 +6,15 @@ function headerAnimation(x) {
     if (!document.getElementsByClassName('change').length){
         // class name does not exist in the document
         document.querySelector('ul.nav.navbar-nav').style.display = "none";
-        document.getElementById('nav-bg').style.cssText = "display: none !important";
         document.querySelector('main').style.filter = "blur(0)";
         // document.querySelector('#title-tag').classList.add('smooth');
     }else {
         // class exists in the document
         document.querySelector('ul.nav.navbar-nav').style.display = "block";
-        document.getElementById('nav-bg').style.cssText = "display: block !important";
         document.querySelector('main').style.filter = "blur(5px)";
     }
 }
+// MAILER
 var btn = document.getElementById('form-btn');
 var mailer = btn.addEventListener('click', function(e){
     var r = new XMLHttpRequest();
@@ -31,3 +30,4 @@ var mailer = btn.addEventListener('click', function(e){
     e.preventDefault();
     btn.setAttribute('disabled','disabled');
 });
+

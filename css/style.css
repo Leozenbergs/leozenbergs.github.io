@@ -12,7 +12,7 @@
     height: 200vh;
     z-index: -1;
     overflow: hidden;
-
+    padding: 0px;
 }
 .bg-bubbles li {
     overflow: hidden;
@@ -147,29 +147,26 @@ body{
     font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 } */
-#nav-bg{
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100% !important;
-    display: none;
-    background-color: rgba(255,255,255, .65);
-    z-index: 5;
-}
 ul.nav.navbar-nav{
     display: none;
     position: fixed;
     list-style: none;
-    z-index: 10;
+    z-index: 9;
     width: 100%;
     height: 100rem;
-    top: 30%;
+    margin-top:0px;
+    top: 0px;
     text-align: center;
+    padding: 0%;
+    background: rgba(0,0,0,.9);
+}
+ul.nav.navbar-nav li{
+    margin: 5%;
 }
 ul.nav.navbar-nav li a{
     /* font-family: 'Montserrat', Verdana; */
     color: #FF7F50;
-    font-size: 32px;
+    font-size: 3rem;
     text-decoration: none;
     text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
 } 
@@ -178,11 +175,12 @@ ul.nav.navbar-nav li a{
     top:10px;
     right: 10px;
     z-index: 10;
+    cursor: pointer;
 }
 .bar1, .bar2, .bar3 {
     width: 40px;
     height: 4px;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, .8);
     margin: 6px 0;
     transition: 0.4s;
     /* border-radius: 100%; */
@@ -191,6 +189,7 @@ ul.nav.navbar-nav li a{
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
+    background: #fff;
 }
 
 .change .bar2 {opacity: 0;}
@@ -198,6 +197,7 @@ ul.nav.navbar-nav li a{
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
+    background: #fff;
 }
 /* /header*/
 
@@ -216,6 +216,7 @@ ul.nav.navbar-nav li a{
     display: inline-block;
     position: absolute;
     top: 40%;
+    text-align: center;
     -ms-transform: translateY(-40%);
     transform: translateY(-40%);
 }
@@ -233,7 +234,7 @@ ul.nav.navbar-nav li a{
     display: inline-block;
     text-align: center;
     font-family: Arial;    
-    background-color: rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, .8);
     color: #fff;
     padding-bottom:25px;
 }
@@ -275,7 +276,7 @@ ul.nav.navbar-nav li a{
     text-align: center;
     font-family: Arial;    
     height: 80vh;
-    background-color: rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, .8);
     color: #fff
 }
 .contact h2{
@@ -287,16 +288,19 @@ ul.nav.navbar-nav li a{
 }
 .form-contato{
     margin-top: 50px;
+    padding-bottom: 50px;
 }
 .form-contato input{
-    padding: 10px;
-    width:25%;
+    padding: 10px 0px;
+    width:100%;
     border:none;
+    margin-top: 2%;
 }
 .form-contato textarea{
     margin-top: 2%;
-    width: 53%;
+    width: 100%;
     border: none;
+    padding: 0px;
 }
 .form-contato textarea::placeholder{
     font-family: Arial;
@@ -313,6 +317,7 @@ ul.nav.navbar-nav li a{
 .btn-align{
     width:100%;
     text-align: center;
+    padding-bottom: 50px;
 }
 /**/
 /**/
@@ -429,14 +434,15 @@ section.header h1{
     display: inline-block;
     text-align: center;
 }
-.hobbies{
+#contato-str{
     width: 60%;
+    display: inline-block;
 }
-.curriculum h3,.hobbies h3{
-    font-size: 27px;
+.rodape{
+    background: rgba(255, 127, 80, .9);;
+    height: 40vh;
+    width:100%;
 }
-
-
 @-webkit-keyframes circleBounce {
     0% {-webkit-transform: scale(0.9); opacity: 0;}
     20% {opacity: 0.5;}
@@ -447,39 +453,26 @@ section.header h1{
   
   
 
-
-@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+@media screen and (max-width:747px){
+    #description{
+        display: inline-block;  
+    }
+    .photo{
+        height: 65% !important;
+        border-radius: 5%;
+        top: 0px;
+        width: 100%;
+        position: relative;
+    }
+    .dark-filter{
+        border-radius: 5%;
+    }
+    .desc{
+        width: 100%;
+    }
+    .desc-line {
+        height: 1px;
+        width: 80%;
+        margin: 25px;
+    }
 }
