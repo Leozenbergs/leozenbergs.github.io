@@ -13,6 +13,7 @@
     z-index: -1;
     overflow: hidden;
     padding: 0px;
+    margin-top:0px;
 }
 .bg-bubbles li {
     overflow: hidden;
