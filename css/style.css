@@ -355,12 +355,13 @@ section.header h1{
     border: 3px solid #333;
     border-top: none;
     border-left: none;
-    
+    cursor: pointer;
     -webkit-transform: rotate(45deg);
     -webkit-transform-origin: 50% 50%;
 }
   
 #scrollDown:after {
+    cursor:pointer;
     content: "";
     display: block;
     position: absolute;
@@ -388,25 +389,50 @@ section.header h1{
 }
 .photo{
     width: 30%;
+    position: relative;
     height: 90% !important;
-    background: url('../images/me.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    /* nter; */
     transition: all 1s ease-in-out;
+    /* max-height: 475px; */
+    overflow: hidden;
+}
+.photo #leonardo-rodrigues-img{
+    width: 100%;
+    height: 100%;
+    transition:all .5s ease-in-out;
+    object-fit: cover;
+}
+.photo:hover{
+    /* box-shadow: 0px 0px 50px #FF7F50; */
+    transition:all 1s ease-in-out;
+}
+.photo:hover #leonardo-rodrigues-img{
+    transform: scale(1.05);
 }
 .photo:hover .dark-filter{
     display: flex;
     justify-content: center;
+    align-items: center;
+    transition:all .3s ease-in-out;
 }
 .dark-filter{
     height: 100%;
+    position:absolute;
+    top:0px;
     width:100%;
     color: #fff;
     cursor:pointer;
     display: none;
     text-align: center;
-    background: linear-gradient(to bottom,rgba(0, 0, 0, .2)40%,rgba(0, 0, 0, .9));
+    background: linear-gradient(to bottom,rgba(0, 0, 0, .2)1%,rgba(0, 0, 0, .95));
+    transition:all .5s ease-in-out;
 }
+.dark-filter img{
+    max-width: 64px;
+    max-height: 64px;
+    transition:all .5s ease-in-out;
+}
+
 .dark-filter p{
     position: absolute;
     text-transform: uppercase;
