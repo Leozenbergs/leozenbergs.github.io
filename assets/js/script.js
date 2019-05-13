@@ -1,5 +1,15 @@
 // AOS Library load
 AOS.init();
+var scroll = document.getElementById('scrollDown');
+scroll.addEventListener('click', function(){
+  // console.log('teste');
+  window.scrollTo({
+    top: 650,
+    behavior: 'smooth'
+  });
+});
+
+
 // Menu animation
 function headerAnimation(x) {
     x.classList.toggle("change");
@@ -30,4 +40,3 @@ var mailer = btn.addEventListener('click', function(e){
     e.preventDefault();
     btn.setAttribute('disabled','disabled');
 });
-

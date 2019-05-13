@@ -33,8 +33,8 @@
         </ul>
     </header>
     <main role="main">
-        <div class="container-fluid" role="banner"> 
-            
+        <div class="container-fluid" role="banner">
+
             <section class="header">
                 <!-- square effects -->
                 <ul class="bg-bubbles">
@@ -53,15 +53,16 @@
 
                 <h1 id="title-tag">
                     <span id="title-message">OI, eu sou Leonardo Rodrigues</span>
-                    <div id="sub-message"> e sou um desenvolvedor Web</div>
-                </h1>    
-                <div id="scrollDown"></div>    
-            </section>    
+                    <div id="sub-message"> e sou um desenvolvedor front end</div>
+                </h1>
+            </section>
+            <button type="button" id="scrollDown">&#10148;</button>
         </div>
-        <div class="container-fluid">            
+        <div class="container-fluid">
             <section class="about">
-                <h2>Sobre mim &#x1F603</h2>
-                <hr data-aos="fade-right" class="section-subline">  
+              <!-- &#x1F603 -->
+                <h2>Sobre mim &#x1F603 </h2>
+                <hr data-aos="fade-right" class="section-subline">
                 <div class="main-about">
                     <div id="description">
                         <div class="photo" data-aos="fade-right">
@@ -74,41 +75,64 @@
                         <hr class="desc-line">
                         <div class="desc">
                             <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor neque felis, a eleifend turpis 
-                                    ullamcorper id. Integer erat odio, pellentesque at dui vehicula, euismod tempus ligula. Ut tempor mi urna. 
-                                    Vestibulum sem nulla, molestie quis porttitor sed, pharetra ac eros. Sed eget elementum mi. 
-                                    Vivamus pellentesque id erat vitae facilisis. Integer et faucibus turpis. Aenean mauris enim, 
-                                    congue ac viverra nec, lobortis vel neque. Ut at tincidunt purus. Pellentesque tempor laoreet sodales. 
-                                    In accumsan, enim eu pharetra malesuada, leo metus bibendum sem, auctor commodo dui lorem eget orci. 
-                                    Cras dictum risus in faucibus pellentesque. Nunc bibendum urna eu velit efficitur bibendum. Phasellus 
-                                    justo quam, condimentum non ipsum a, sodales condimentum lectus.
-                            
-                                    Curabitur id mi varius, auctor mauris ac, posuere lacus. Phasellus et purus pellentesque, 
-                                    egestas quam ut, tristique elit. Donec ac tempus sem. Sed porttitor rutrum mattis. Praesent maximus
-                                     diam eget felis venenatis tempus. Fusce suscipit mi ante, in semper elit viverra nec. Pellentesque 
-                                     volutpat cursus velit at tempus. Nulla finibus placerat magna eget egestas. Duis non convallis nisi.
-                                      Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sit amet 
-                                      eros posuere, tempor erat sit amet, malesuada sapien. Curabitur nec feugiat elit. Pellentesque felis 
-                                      augue, dictum eu elit ut, vestibulum lacinia velit. 
-     
+                              Com 1 ano de experiência, tenho como principais
+atributos a sede por conhecimento, proatividade e
+flexibilidade.
+                            </p>
+                            <p>
+                              Nesse período cheguei a desenvolver sistemas de
+e-commerce com Wordpress com integração REST
+de API’s, landing pages, apliquei manutenções e
+email-marketings .
+                            </p>
+                            <p>
+                              Busco cada vez desafios novos e maiores, onde eu
+possa evoluir minhas capacidades e skills.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            
+
         </div>
         <div class="container-fluid">
             <section class="portifolio">
                 <h2>Portifolio 💡</h2>
-                <hr data-aos="fade-right" class="section-subline"> 
+                <hr data-aos="fade-right" class="section-subline">
+                <div class="portifolio_content" data-aos="zoom-in-down">
+
+                  <div class="item" title="Anime-admin github repository">
+                    <a href="https://github.com/leonardo-rod/animeAdmin">
+                      <div class="card-port">
+                        <img src="assets/images/portifolio/anime-list.png" alt="">
+                        <div class="card_title text-center">
+                          anime-admin
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="item" title="Sw-chargen github repository">
+                    <a href="https://github.com/leonardo-rod/SW-Character-Generator">
+
+                      <div class="card-port">
+                        <img src="assets/images/portifolio/sw-chargen.png" alt="">
+                        <div class="card_title text-center">
+                          sw-chargen
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+
+                </div>
             </section>
         </div>
         <div class="container-fluid">
             <section class="contact">
                 <h2>Contato</h2>
-                <hr data-aos="fade-right" class="section-subline"> 
+                <hr data-aos="fade-right" class="section-subline">
                 <div id="contato-str">
                     <form action="" class="form-contato" method="POST">
                         <label for="nome">
@@ -123,13 +147,13 @@
                         <div class="btn-align">
                             <button type="button" id="form-btn"> Enviar </button>
                         </div>
-                        
+
                     </form>
                 </div>
             </section>
         </div>
     </main>
-    
+
     <script src="assets/js/script.js"></script>
     <footer id="footer" role="contentinfo">
         <div class="rodape">
@@ -139,10 +163,10 @@
                 <a href="https://www.linkedin.com/in/leonardoabreurodrigues/" title="Linkedin"><img src="assets/images/icons/linkedin-logo.png" alt="Linkedin"></a>
             </div>
             <div class="rodape-down">
-                <p id="rights">Desenvolvido por Leonardo Rodrigues - 2018</p>
+                <p id="rights">Desenvolvido por Leonardo Rodrigues &copy; 2019</p>
             </div>
         </div>
-    </footer>   
-    
+    </footer>
+
 </body>
 </html>
