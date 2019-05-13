@@ -501,7 +501,7 @@ section.header h1{
 
 .item:hover{
   filter: grayscale(0);
-  transform: scale(1.04);
+  transform: scale(1.01);
   box-shadow: 0px 0px 10px #ccc;
   border-color: #FF7F50;
 }
