@@ -166,12 +166,16 @@ ul.nav.navbar-nav{
 ul.nav.navbar-nav li{
     margin: 5%;
 }
-ul.nav.navbar-nav li a{
+ul.nav.navbar-nav li p{
     /* font-family: 'Montserrat', Verdana; */
     color: #FF7F50;
     font-size: 3rem;
     text-decoration: none;
     text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+    background: transparent;
+    border: 0px;
+    outline:none;
+    cursor: pointer;
 }
 #h-icon{
     position: fixed;
