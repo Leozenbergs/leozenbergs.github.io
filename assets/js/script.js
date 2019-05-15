@@ -65,6 +65,7 @@ var mailer = (btn = document.getElementById('form-btn')) =>{
     btn.addEventListener('click', (e) => {
         var r = new XMLHttpRequest();
         r.open("POST", "//formspree.io/leoabreu14@gmail.com/", true);
+        r.setRequestHeader('Access-Control-Allow-Headers', 'Origin,Content-Type,Accept');
         r.setRequestHeader('Access-Control-Allow-Origin', '*');
         r.onreadystatechange = () => {
             if (r.readyState != 4 || r.status != 200){
