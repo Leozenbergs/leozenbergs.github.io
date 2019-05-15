@@ -5,47 +5,46 @@ let about = document.getElementById('link_about');
 let portifolio = document.getElementById('link_portifolio');
 let contact = document.getElementById('link_contact');
 
-
-mainbutton.addEventListener('click', function(){
-
-      var a = document.getElementById('about_me');
-      var medidaArrA = a.offsetTop;
-      console.log(medidaArrA);
-      scrollToElem(medidaArrA);
-});
-about.addEventListener('click', function(){
-
-      var b = document.getElementById('about_me');
-      var medidaArrB = b.offsetTop;
-      console.log(medidaArrB);
-      scrollToElem(medidaArrB);
-});
-portifolio.addEventListener('click', function(){
-
-      var c = document.getElementById('my_portifolio');
-      var medidaArrC = c.offsetTop;
-      console.log(medidaArrC);
-      scrollToElem(medidaArrC);
-});
-contact.addEventListener('click', function(){
-
-      var d = document.getElementById('contact_me');
-      var medidaArrD = d.offsetTop;
-      console.log(medidaArrD);      
-      scrollToElem(medidaArrD);
-});
+let a = document.getElementById('about_me');
+let b = document.getElementById('about_me');
+let c = document.getElementById('my_portifolio');
+let d = document.getElementById('contact_me');
 
 
+let scrollToElem = (y) => {
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth'
+    });
+}
+let mapLinks = () => {
+    document.addEventListener('click', (e)=>{
+        let click = e.target.id;
+        switch(click){
+            case 'scrollDown':
+                var medidaArr = a.offsetTop;
+            break;
+            
+            case 'link_about':
+                var medidaArr = b.offsetTop;
+            break;
 
-function scrollToElem(y){
-  window.scrollTo({
-    top: y,
-    behavior: 'smooth'
-  });
+            case 'link_portifolio':
+                var medidaArr = c.offsetTop;
+            break;
+
+            case 'link_contact':
+                var medidaArr = d.offsetTop;
+            break;
+        }
+        scrollToElem(medidaArr);
+    });
 }
 
+
+
 // Menu animation
-function headerAnimation(x) {
+let headerAnimation = (x) => {
     x.classList.toggle("change");
     if (!document.getElementsByClassName('change').length){
         // class name does not exist in the document
@@ -59,18 +58,30 @@ function headerAnimation(x) {
     }
 }
 // MAILER
-var btn = document.getElementById('form-btn');
-var mailer = btn.addEventListener('click', function(e){
-    var r = new XMLHttpRequest();
-    r.open("POST", "https://formspree.io/leoabreu14@gmail.com", true);
-    r.onreadystatechange = function () {
-        if (r.readyState != 4 || r.status != 200){
-            console.log('error');
-        }else{
-            console.log("Success: " + r.responseText);
-        }
-    };
-    r.send();
-    e.preventDefault();
-    btn.setAttribute('disabled','disabled');
-});
+
+var mailer = (btn = document.getElementById('form-btn')) =>{
+    let form = document.getElementById('form_contato');
+    let data = new FormData(form);
+    btn.addEventListener('click', (e) => {
+        var r = new XMLHttpRequest();
+        r.open("POST", "//formspree.io/leoabreu14@gmail.com/", true);
+        r.setRequestHeader('Access-Control-Allow-Origin', '*');
+        r.onreadystatechange = () => {
+            if (r.readyState != 4 || r.status != 200){
+                console.log(`${r.status} error`);
+            }else{
+                console.log(`Success:  ${r.responseText}`);
+            }
+        };
+        r.send(data);
+        e.preventDefault();
+        btn.setAttribute('disabled','disabled');
+    });
+}
+
+let main = () => {
+    mapLinks();
+    mailer();
+}
+window.onload = main;
+
