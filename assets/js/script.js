@@ -11,13 +11,13 @@ let c = document.getElementById('my_portifolio');
 let d = document.getElementById('contact_me');
 
 
-let scrollToElem = (y) => {
+function scrollToElem(y){
     window.scrollTo({
       top: y,
       behavior: 'smooth'
     });
 }
-let mapLinks = () => {
+function mapLinks(){
     document.addEventListener('click', (e)=>{
         let click = e.target.id;
         switch(click){
@@ -44,7 +44,7 @@ let mapLinks = () => {
 
 
 // Menu animation
-let headerAnimation = (x) => {
+function headerAnimation(x){
     x.classList.toggle("change");
     if (!document.getElementsByClassName('change').length){
         // class name does not exist in the document
@@ -59,32 +59,10 @@ let headerAnimation = (x) => {
 }
 // MAILER
 
-var mailer = (btn = document.getElementById('form-btn')) =>{
-    // let form = document.getElementById('form_contato');
-    // let data = new FormData(form);
-    // btn.addEventListener('click', (e) => {
-    //     var r = new XMLHttpRequest();
-    //     r.open("POST", "https://formspree.io/leoabreu14@gmail.com", true);
-    //     r.setRequestHeader("Access-Control-Allow-Origin", "*");
-    //     r.setRequestHeader("Access-Control-Allow-Credentials", "true");
-    //     r.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    //     r.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-    //     r.onreadystatechange = () => {
-    //         if (r.readyState != 4 || r.status != 200){
-    //             console.log(`${r.status} error`);
-    //         }else{
-    //             console.log(`Success:  ${r.responseText}`);
-    //         }
-    //     };
-    //     r.send(data);
-    //     e.preventDefault();
-        // btn.setAttribute('disabled','disabled');
-    // });
-}
 
-let main = () => {
+
+function main(){
     mapLinks();
-    mailer();
 }
 window.onload = main;
 
