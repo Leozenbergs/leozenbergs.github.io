@@ -1,34 +1,7 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-    >
-      <v-list>
-        <v-avatar>
-          <img
-            src="https://cdn.vuetifyjs.com/images/john.jpg"
-            alt="John"
-          >
-        </v-avatar>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar fixed app>
+    <custom-drawer :drawer="drawer" />
+    <v-app-bar fixed app dense flat color="primary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
       <v-toolbar-title>{{ title }}</v-toolbar-title>
@@ -56,41 +29,30 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :absolute="false" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-flex class="text-center">
+        <span>{{$accessor.profile?.name}} &copy; {{ new Date().getFullYear() }}</span>
+      </v-flex>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import Vue from 'vue';
+import customDrawer from '~/components/drawer/customDrawer'
 import themeModeButton from '~/components/buttons/themeModeButton';
+import global from '~/mixins/global.vue'
 
-export default {
-  name: 'DefaultLayout',
-  components: {themeModeButton},
+// Vue.mixins(global)
+
+export default{
+  components: {customDrawer, themeModeButton},
   data() {
     return {
-      drawer: false,
-      items: [
-        {
-          icon: 'mdi-book-open-variant',
-          title: 'About',
-          to: '/',
-        },
-        {
-          icon: 'mdi-xml',
-          title: 'Projects',
-          to: '/inspire',
-        },
-        {
-          icon: 'mdi-account-circle',
-          title: 'Contact',
-          to: '/inspire',
-        },
-      ],
+      drawer: true,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
+      title: 'Portfolio',
     }
-  }
+  },
 }
 </script>
