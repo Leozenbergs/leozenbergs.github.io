@@ -1,5 +1,14 @@
 <template>
   <v-container v-if="projects.length">
+    <p class="text-h3 text-center my-5">Projects</p>
+    <v-text-field
+      rounded
+      filled
+      clearable
+      label="Search some repositories"
+      append-icon="mdi-magnify"
+      class="my-5"
+    />
     <v-row>
       <v-col
         v-for="(repo, index) in projects"
@@ -25,7 +34,7 @@ export default {
   mixins: [global],
   data() {
     return {
-      projects: []
+      projects: [] as any[]
     }
   },
   async mounted() {
