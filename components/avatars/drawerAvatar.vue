@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-center my-4">
-    <v-avatar :size="100">
+    <v-avatar :size="100" style="border: 3px solid orange">
       <img
         :src="$accessor.profile?.avatar_url"
         alt="John"

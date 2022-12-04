@@ -1,5 +1,4 @@
-<template>
-  
+<template>  
 </template>
 
 <script lang="ts">

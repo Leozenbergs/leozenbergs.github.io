@@ -9,9 +9,19 @@
 
       <theme-mode-button/>
 
-      <v-btn ml-4 icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-filter</v-icon>
-      </v-btn>
+      <v-tooltip v-if="showFilters" bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            v-on="on"
+            ml-4
+            icon
+            @click.stop="rightDrawer = !rightDrawer"
+          >
+            <v-icon>mdi-filter</v-icon>
+          </v-btn>
+        </template>
+        <span>Filters</span>
+      </v-tooltip>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -54,5 +64,10 @@ export default{
       title: 'Portfolio',
     }
   },
+  computed: {
+    showFilters() {
+      return this.$nuxt?.$route?.path === '/projects'
+    }
+  }
 }
 </script>
