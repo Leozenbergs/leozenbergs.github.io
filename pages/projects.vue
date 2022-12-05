@@ -12,6 +12,7 @@
       class="my-5"
       @keydown.enter="searchRepos"
     />
+    <v-skeleton-loader v-show="loading" type="card, card, card" />
     <v-row v-if="projects.length">
       <v-col
         v-for="(repo, index) in projects"
@@ -42,11 +43,13 @@ export default {
   data() {
     return {
       search: '' as string,
-      projects: [] as any[]
+      projects: [] as any[],
+      loading: true as boolean
     }
   },
   async mounted() {
     this.projects = await this.getRepos()
+    this.loading = false
     this.prepareLanguages()
 
     this.$nuxt.$on('select-filter', (langs: Array<any>) => {
