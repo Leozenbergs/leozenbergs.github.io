@@ -15,7 +15,7 @@
             v-on="on"
             ml-4
             icon
-            @click.stop="rightDrawer = !rightDrawer"
+            @click.stop="toggleRightDrawer"
           >
             <v-icon>mdi-filter</v-icon>
           </v-btn>
@@ -28,16 +28,7 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+    <filters-drawer :opened="rightDrawer"/>
     <v-footer :absolute="false" app>
       <v-flex class="text-center">
         <span>{{$accessor.profile?.name}} &copy; {{ new Date().getFullYear() }}</span>
@@ -50,16 +41,14 @@
 import Vue from 'vue';
 import customDrawer from '~/components/drawer/customDrawer'
 import themeModeButton from '~/components/buttons/themeModeButton';
-import global from '~/mixins/global.vue'
+import filtersDrawer from '~/components/drawer/filtersDrawer'
 
-// Vue.mixins(global)
 
 export default{
-  components: {customDrawer, themeModeButton},
+  components: {customDrawer, themeModeButton, filtersDrawer},
   data() {
     return {
       drawer: true,
-      right: true,
       rightDrawer: false,
       title: 'Portfolio',
     }
@@ -67,6 +56,11 @@ export default{
   computed: {
     showFilters() {
       return this.$nuxt?.$route?.path === '/projects'
+    }
+  },
+  methods: {
+    toggleRightDrawer() {
+      this.rightDrawer ? this.rightDrawer = false : this.rightDrawer = true
     }
   }
 }

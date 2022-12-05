@@ -8,7 +8,9 @@ export const state = () => ({
     avatar_url: '',
     bio: ''
   },
-  about: ''
+  about: '',
+  repos: [] as any[],
+  languages: [] as string[]
 })
 
 type RootState = ReturnType<typeof state>
@@ -16,6 +18,8 @@ type RootState = ReturnType<typeof state>
 export const getters = {
   profile: (state: RootState) => state.profile,
   about: (state: RootState) => state.about,
+  repos: (state: RootState) => state.repos,
+  languages: (state: RootState) => state.languages,
 }
 
 export const mutations = mutationTree(state, {
@@ -25,6 +29,14 @@ export const mutations = mutationTree(state, {
 
   setAbout(state, newValue) {
     state.about = newValue
+  },
+
+  setRepos(state, newValue) {
+    state.repos = newValue
+  },
+
+  setLanguages(state, newValue) {
+    state.languages = newValue
   },
 
   initialiseStore() {
