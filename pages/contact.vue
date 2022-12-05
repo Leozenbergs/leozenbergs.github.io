@@ -2,6 +2,9 @@
   <v-form v-model="valid">
     <v-container>
       <p class="text-h3 text-center mb-5">Contact</p>
+      <p class="text-center">
+        You can get in touch with me throught my <a :href="linkedin">linkedin </a>or mail:
+      </p>
       <v-row justify="center" class="mt-5">
         <v-col
           cols="12"
@@ -66,7 +69,8 @@ export default {
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
-      body: ''
+      body: '',
+      linkedin: 'https://www.linkedin.com/in/leonardoabreurodrigues/'
     }
   },
   computed: {
