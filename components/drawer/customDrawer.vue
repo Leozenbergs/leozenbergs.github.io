@@ -13,6 +13,7 @@
         :to="item.to"
         router
         exact
+        color="primary"
       >
         <v-list-item-action>
           <v-icon>{{ item.icon }}</v-icon>

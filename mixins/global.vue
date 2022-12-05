@@ -13,7 +13,8 @@ export default Vue.extend({
     },
 
     async getRepos() {
-      const response = await this.$axios.$get('/repos')
+      const response : XMLHttpRequest = await this.$axios.$get('/repos')
+      this.$accessor.setRepos(response)
       return response
     },
 
@@ -21,6 +22,10 @@ export default Vue.extend({
       const response : XMLHttpRequest = await this.$axios.$get('https://raw.githubusercontent.com/leozenbergs/Leozenbergs/master/README.md')
       this.$accessor.setAbout(response)
       return response
+    },
+
+    getLanguages(languages: Array<string>) {
+      this.$accessor.setLanguages(languages)
     }
   }
 })
