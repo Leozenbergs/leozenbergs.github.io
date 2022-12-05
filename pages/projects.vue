@@ -21,20 +21,21 @@
         width="30%"
         :key="index"
       >
-        <v-card :min-height="100">
-          <v-card-title>{{ repo.name }}</v-card-title>
-          <v-card-text>
-            <div>{{ repo.description }}</div>
-            <div>{{ repo.language }}</div>
-          </v-card-text>
-        </v-card>
+        <a :href="repo.html_url" target="_blank">
+          <v-card :min-height="100">
+            <v-card-title>{{ repo.name }}</v-card-title>
+            <v-card-text>
+              <div>{{ repo.description }}</div>
+              <div>{{ repo.language }}</div>
+            </v-card-text>
+          </v-card>
+        </a>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script lang="ts">
-import { TargetProp } from 'vuetify/types/services/application'
 import global from '~/mixins/global.vue'
 
 
