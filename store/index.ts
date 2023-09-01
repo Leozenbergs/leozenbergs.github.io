@@ -1,16 +1,14 @@
-import { getAccessorType, mutationTree, actionTree } from 'typed-vuex'
-import { Context } from '@nuxt/types'
-
+import { getAccessorType, mutationTree } from 'typed-vuex'
 
 export const state = () => ({
   profile: {
     name: '',
     avatar_url: '',
-    bio: ''
+    bio: '',
   },
   about: '',
   repos: [] as any[],
-  languages: [] as string[]
+  languages: [] as string[],
 })
 
 type RootState = ReturnType<typeof state>
@@ -38,14 +36,10 @@ export const mutations = mutationTree(state, {
   setLanguages(state, newValue) {
     state.languages = newValue
   },
-
-  initialiseStore() {
-    console.log('initialised')
-  },
 })
 
 export const accessorType = getAccessorType({
   getters,
   mutations,
-  state
+  state,
 })

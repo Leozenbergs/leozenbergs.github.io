@@ -7,16 +7,11 @@
       <v-toolbar-title>{{ title }}</v-toolbar-title>
       <v-spacer />
 
-      <theme-mode-button/>
+      <theme-mode-button />
 
       <v-tooltip v-if="showFilters" bottom>
-        <template v-slot:activator="{ on }">
-          <v-btn
-            v-on="on"
-            ml-4
-            icon
-            @click.stop="toggleRightDrawer"
-          >
+        <template #activator="{ on }">
+          <v-btn ml-4 icon v-on="on" @click.stop="toggleRightDrawer">
             <v-icon>mdi-filter</v-icon>
           </v-btn>
         </template>
@@ -28,24 +23,25 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <filters-drawer :opened="rightDrawer"/>
+    <filters-drawer :opened="rightDrawer" />
     <v-footer :absolute="false" app>
       <v-flex class="text-center">
-        <span>{{$accessor.profile?.name}} &copy; {{ new Date().getFullYear() }}</span>
+        <span
+          >{{ $accessor.profile?.name }} &copy;
+          {{ new Date().getFullYear() }}</span
+        >
       </v-flex>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import Vue from 'vue';
 import customDrawer from '~/components/drawer/customDrawer'
-import themeModeButton from '~/components/buttons/themeModeButton';
+import themeModeButton from '~/components/buttons/themeModeButton'
 import filtersDrawer from '~/components/drawer/filtersDrawer'
 
-
-export default{
-  components: {customDrawer, themeModeButton, filtersDrawer},
+export default {
+  components: { customDrawer, themeModeButton, filtersDrawer },
   data() {
     return {
       drawer: true,
@@ -56,12 +52,18 @@ export default{
   computed: {
     showFilters() {
       return this.$nuxt?.$route?.path === '/projects'
-    }
+    },
   },
   methods: {
     toggleRightDrawer() {
-      this.rightDrawer ? this.rightDrawer = false : this.rightDrawer = true
-    }
-  }
+      this.rightDrawer ? (this.rightDrawer = false) : (this.rightDrawer = true)
+    },
+  },
 }
 </script>
+
+<style>
+a {
+  text-decoration: none;
+}
+</style>

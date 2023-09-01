@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - leozenbergs.github.io',
-    title: 'leozenbergs.github.io',
+    titleTemplate: '%s - Leonardo Rodrigues',
+    title: 'Leonardo Rodrigues',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,10 +21,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/vuetify.ts' },
-    { src: '~/plugins/axios.js' },
-  ],
+  plugins: [{ src: '~/plugins/vuetify.ts' }, { src: '~/plugins/axios.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -44,7 +41,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
-    'nuxt-typed-vuex'
+    'nuxt-typed-vuex',
   ],
 
   // See https://github.com/markdown-it/markdown-it
@@ -72,7 +69,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
+      dark: true,
       themes: {
         dark: {
           primary: colors.orange.accent2,

@@ -16,13 +16,13 @@
     <v-row v-if="projects.length">
       <v-col
         v-for="(repo, index) in projects"
+        :key="index"
         :md="6"
         :cols="12"
         width="30%"
-        :key="index"
       >
         <a :href="repo.html_url" target="_blank">
-          <v-card :min-height="100">
+          <v-card :min-height="100" outlined class="rounded-lg">
             <v-card-title>{{ repo.name }}</v-card-title>
             <v-card-text>
               <div>{{ repo.description }}</div>
@@ -36,8 +36,7 @@
 </template>
 
 <script lang="ts">
-import global from '~/mixins/global.vue'
-
+import global from '~/mixins/globalMixin.vue'
 
 export default {
   mixins: [global],
@@ -45,7 +44,7 @@ export default {
     return {
       search: '' as string,
       projects: [] as any[],
-      loading: true as boolean
+      loading: true as boolean,
     }
   },
   async mounted() {
@@ -54,32 +53,42 @@ export default {
     this.prepareLanguages()
 
     this.$nuxt.$on('select-filter', (langs: Array<any>) => {
-      langs = langs.filter(item => item !== null)
+      langs = langs.filter((item) => item !== null)
       this.filterLanguages(langs)
     })
   },
   methods: {
     prepareLanguages(): void {
-      const langs = Object.values(this.projects)?.map((item: any) => item.language )
+      const langs = Object.values(this.projects)?.map(
+        (item: any) => item.language
+      )
 
-      let uniqueChars = langs.filter((char: string, index: number) => langs.indexOf(char) === index);
+      const uniqueChars = langs.filter(
+        (char: string, index: number) => langs.indexOf(char) === index
+      )
 
-      let validLangs : string[] = uniqueChars.filter((item: string) => item !== null)
+      const validLangs: string[] = uniqueChars.filter(
+        (item: string) => item !== null
+      )
       this.getLanguages(validLangs)
     },
 
     filterLanguages(langs: Array<string>): void | any[] {
-      if(!langs.length) return this.projects = this.$accessor.repos
+      if (!langs.length) return (this.projects = this.$accessor.repos)
 
-      this.projects = this.projects.filter(item => langs.includes(item.language))
+      this.projects = this.projects.filter((item) =>
+        langs.includes(item.language)
+      )
     },
 
     searchRepos(): void | any[] {
-      if(!this.search?.length) return this.projects = this.$accessor.repos
-      let regSearch: RegExp = new RegExp(this.search)
-      const result = this.projects.filter((item: any) => regSearch.test(item.name))
+      if (!this.search?.length) return (this.projects = this.$accessor.repos)
+      const regSearch: RegExp = new RegExp(this.search)
+      const result = this.projects.filter((item: any) =>
+        regSearch.test(item.name)
+      )
       this.projects = result
-    }
-  }
+    },
+  },
 }
 </script>
