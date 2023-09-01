@@ -1,5 +1,11 @@
 <template>
-  <v-navigation-drawer v-model="drawer" right temporary fixed class="text-center">
+  <v-navigation-drawer
+    v-model="drawer"
+    right
+    temporary
+    fixed
+    class="text-center"
+  >
     <p class="text-h5 my-5">Language filters</p>
     <v-divider />
     <v-list>
@@ -23,13 +29,13 @@ export default Vue.extend({
   props: {
     opened: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       drawer: false,
-      selected: [] as string[]
+      selected: [] as string[],
     }
   },
   watch: {
@@ -37,8 +43,8 @@ export default Vue.extend({
       immediate: true,
       handler() {
         this.drawer = this.opened
-      }
-    }
-  }
+      },
+    },
+  },
 })
 </script>

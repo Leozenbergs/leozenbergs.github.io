@@ -1,9 +1,5 @@
 <template>
-  <v-navigation-drawer
-    :value="drawer"
-    fixed
-    app
-  >
+  <v-navigation-drawer :value="drawer" fixed app>
     <drawer-avatar />
     <v-divider />
     <v-list>
@@ -27,19 +23,17 @@
 </template>
 
 <script>
-
-import Vue from 'vue';
-import drawerAvatar from '~/components/avatars/drawerAvatar.vue';
-import global from '~/mixins/global.vue';
+import drawerAvatar from '~/components/avatars/drawerAvatar.vue'
+import global from '~/mixins/globalMixin.vue'
 
 export default {
-  components: {drawerAvatar},
+  components: { drawerAvatar },
   mixins: [global],
   props: {
     drawer: {
       type: Boolean,
-      default: () => true
-    }
+      default: () => true,
+    },
   },
   data() {
     return {
@@ -60,11 +54,11 @@ export default {
           to: '/contact',
         },
       ],
-      loaded: false
+      loaded: false,
     }
   },
   mounted() {
     this.getProfile()
-  }
+  },
 }
 </script>

@@ -7,13 +7,12 @@
 </template>
 
 <script>
-import global from '~/mixins/global.vue'
-
+import global from '~/mixins/globalMixin.vue'
 
 export default {
   mixins: [global],
   mounted() {
     this.getMD()
-  }
+  },
 }
 </script>
