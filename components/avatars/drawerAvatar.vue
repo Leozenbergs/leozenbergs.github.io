@@ -1,8 +1,10 @@
 <template>
   <div class="d-flex justify-center my-4">
-    <v-avatar :size="100" style="border: 3px solid #ffa500">
-      <img :src="$accessor.profile?.avatar_url" alt="John" />
-    </v-avatar>
+    <nuxt-link to="/">
+      <v-avatar :size="100" style="border: 3px solid #ffa500">
+        <img :src="$accessor.profile?.avatar_url" alt="John" />
+      </v-avatar>
+    </nuxt-link>
   </div>
 </template>
 

@@ -1,29 +1,10 @@
 <template>
-  <v-app dark>
-    <custom-drawer :drawer="drawer" />
-    <v-app-bar fixed app dense flat color="primary">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
-      <v-spacer />
-
-      <theme-mode-button />
-
-      <v-tooltip v-if="showFilters" bottom>
-        <template #activator="{ on }">
-          <v-btn ml-4 icon v-on="on" @click.stop="toggleRightDrawer">
-            <v-icon>mdi-filter</v-icon>
-          </v-btn>
-        </template>
-        <span>Filters</span>
-      </v-tooltip>
-    </v-app-bar>
+  <v-app dark>    
     <v-main>
-      <v-container>
+      <v-container fluid>
         <Nuxt />
       </v-container>
     </v-main>
-    <filters-drawer :opened="rightDrawer" />
     <v-footer :absolute="false" app>
       <v-flex class="text-center">
         <span
@@ -65,6 +46,10 @@ export default {
 <style>
 a {
   text-decoration: none;
+}
+
+.fill {
+  height:100vh
 }
 
 * {
