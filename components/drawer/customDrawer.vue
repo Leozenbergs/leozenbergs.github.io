@@ -41,7 +41,7 @@ export default {
         {
           icon: 'mdi-book-open-variant',
           title: 'About',
-          to: '/',
+          to: '/about',
         },
         {
           icon: 'mdi-xml',

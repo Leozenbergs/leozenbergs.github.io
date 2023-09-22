@@ -21,15 +21,19 @@
         :cols="12"
         width="30%"
       >
-        <a :href="repo.html_url" target="_blank">
-          <v-card :min-height="100" outlined class="rounded-lg">
-            <v-card-title>{{ repo.name }}</v-card-title>
-            <v-card-text>
-              <div>{{ repo.description }}</div>
-              <div>{{ repo.language }}</div>
-            </v-card-text>
-          </v-card>
-        </a>
+        <kinesis-container>
+          <KinesisElement type="depth">
+            <a :href="repo.html_url" target="_blank">
+              <v-card :min-height="100" outlined class="rounded-lg">
+                <v-card-title>{{ repo.name }}</v-card-title>
+                <v-card-text>
+                  <div>{{ repo.description }}</div>
+                  <div>{{ repo.language }}</div>
+                </v-card-text>
+              </v-card>
+            </a>
+          </KinesisElement>
+        </kinesis-container>
       </v-col>
     </v-row>
   </v-container>
@@ -37,8 +41,10 @@
 
 <script lang="ts">
 import global from '~/mixins/globalMixin.vue'
+import { KinesisContainer, KinesisElement} from "vue-kinesis"
 
 export default {
+  components: {KinesisContainer, KinesisElement},
   mixins: [global],
   data() {
     return {
